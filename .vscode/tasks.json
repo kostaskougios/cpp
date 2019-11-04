@@ -2,16 +2,27 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "make",
+            "label": "make-cpp-makefile-template",
             "type": "shell",
             "command": "make",
             "options": {
                 "cwd": "cpp_makefile_template"
+            }
+        },
+        {
+            "label": "make-testing",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "testing"
             },
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         },
         {
             "label": "make clean",
