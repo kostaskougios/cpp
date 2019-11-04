@@ -1,0 +1,9 @@
+PROJECT_ROOT=`pwd`
+mkdir lib-src
+cd lib-src
+
+git clone git@github.com:google/googletest.git
+
+cd $PROJECT_ROOT/lib-src/googletest
+cmake CMakeLists.txt
+make
