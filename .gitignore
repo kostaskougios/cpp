@@ -32,5 +32,6 @@
 *.app
 **/build/
 
-# lib src files
-lib-src
+# cmake
+CMakeFiles
+CMakeCache.txt
