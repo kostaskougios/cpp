@@ -10,6 +10,6 @@ conan_basic_setup()
 include_directories(include)
 
 add_library(whattotest src/whattotest.cpp)
-add_executable(tests tests/tests.cpp src/whattotest.cpp)
+add_executable(tests tests/tests.cpp)
 
-target_link_libraries(tests ${CONAN_LIBS})
+target_link_libraries(tests ${CONAN_LIBS} whattotest)
