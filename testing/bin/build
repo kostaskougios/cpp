@@ -1,7 +1,5 @@
 #!/bin/bash
 
-pwd
-
 rm -rf build
 mkdir build
 pushd build

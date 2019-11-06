@@ -7,5 +7,9 @@ SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-add_executable(tests tests/tests.cpp)
+include_directories(include)
+
+add_library(whattotest src/whattotest.cpp)
+add_executable(tests tests/tests.cpp src/whattotest.cpp)
+
 target_link_libraries(tests ${CONAN_LIBS})
