@@ -2,30 +2,18 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "make-cpp-makefile-template",
+            "label": "cpp_makefile_template: make",
             "type": "shell",
             "command": "make",
             "options": {
                 "cwd": "cpp_makefile_template"
-            }
-        },
-        {
-            "label": "make-testing",
-            "type": "shell",
-            "command": "make",
-            "options": {
-                "cwd": "testing"
-            },
-            "group": {
-                "kind": "build",
-                "isDefault": true
             },
             "problemMatcher": [
                 "$gcc"
             ]
         },
         {
-            "label": "make clean",
+            "label": "cpp_makefile_template: make clean",
             "type": "shell",
             "command": "make clean",
             "options": {
@@ -34,13 +22,39 @@
             "problemMatcher": []
         },
         {
-            "label": "make debug",
+            "label": "cpp_makefile_template: make debug",
             "type": "shell",
             "command": "make clean debug",
             "options": {
                 "cwd": "cpp_makefile_template"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "testing: bin/build",
+            "type": "shell",
+            "command": "bin/build",
+            "options": {
+                "cwd": "testing"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "testing: cmake",
+            "type": "shell",
+            "command": "cmake --build .",
+            "options": {
+                "cwd": "testing/build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
