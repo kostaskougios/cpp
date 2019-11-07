@@ -55,6 +55,17 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "label": "testing: clean",
+            "type": "shell",
+            "command": "rm -rf build",
+            "options": {
+                "cwd": "testing"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }

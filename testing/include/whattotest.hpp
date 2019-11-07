@@ -1,6 +1,3 @@
-#ifndef WHAT_TO_TEST
-#define WHAT_TO_TEST
+#pragma once
 
 double squareRoot(const double a);
-
-#endif
