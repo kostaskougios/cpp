@@ -1,6 +1,7 @@
 #include "whattotest.hpp"
 #include <gtest/gtest.h>
- 
+#include <immer/vector.hpp>
+
 TEST(SquareRootTest, PositiveNos) { 
     ASSERT_EQ(6, squareRoot(36.0));
     ASSERT_EQ(18.0, squareRoot(324.0));
@@ -11,6 +12,12 @@ TEST(SquareRootTest, PositiveNos) {
 TEST(SquareRootTest, NegativeNos) {
     ASSERT_EQ(-1.0, squareRoot(-15.0));
     ASSERT_EQ(-1.0, squareRoot(-0.2));
+}
+
+TEST(VECTOR_TEST, PositiveNos) {
+    const auto v0 = immer::vector<int>{};
+    const auto v1 = v0.push_back(13);
+    ASSERT_EQ(v1[0],13);
 }
  
 int main(int argc, char **argv) {
