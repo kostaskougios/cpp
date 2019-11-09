@@ -7,8 +7,10 @@ using namespace std;
 class Person
 {
 private:
-    string &m_name;
+    string m_name="";
 
 public:
     Person(string);
-}
+
+    string& name();
+};
