@@ -48,10 +48,6 @@
             "options": {
                 "cwd": "testing/build"
             },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "problemMatcher": [
                 "$gcc"
             ]
@@ -62,6 +58,21 @@
             "command": "rm -rf build",
             "options": {
                 "cwd": "testing"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "datastructures: cmake",
+            "type": "shell",
+            "command": "cmake --build .",
+            "options": {
+                "cwd": "datastructures/build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
             },
             "problemMatcher": [
                 "$gcc"
