@@ -9,3 +9,11 @@ string &Person::name()
 {
     return m_name;
 }
+
+string Person::toString() {
+    return "Person("+name()+")";
+}
+
+bool operator==(Person lhs,Person rhs) {
+    return lhs.name()==rhs.name();
+}
