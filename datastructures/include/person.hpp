@@ -22,3 +22,12 @@ public:
 bool operator==(Person, Person);
 
 } // namespace model
+
+template <>
+struct std::hash<model::Person>
+{
+    std::size_t operator()(model::Person p) const
+    {
+        return std::hash<std::string>()(p.name());
+    }
+};

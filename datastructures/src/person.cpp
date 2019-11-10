@@ -1,6 +1,7 @@
 #include "person.hpp"
 
 using std::string;
+using std::hash;
 
 namespace model
 {

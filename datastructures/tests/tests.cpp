@@ -16,6 +16,13 @@ TEST(MAP_OF_PERSON_VALUE, Positive) {
     ASSERT_EQ(v1["kostas"],Person("Kostas"));
 }
 
+TEST(MAP_OF_PERSON_KEY, Positive) {
+    auto v0 = immer::map<Person, int>();
+    auto v1 = v0.set(Person("Kostas"),5).set(Person("nick"),6);
+
+    ASSERT_EQ(v1[Person("Kostas")],5);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
