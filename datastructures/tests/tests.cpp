@@ -10,17 +10,17 @@ TEST(PERSON_NAME_TEST, Positive) {
 }
 
 TEST(MAP_OF_PERSON_VALUE, Positive) {
-    auto v0 = immer::map<std::string, Person>();
-    auto v1 = v0.set("kostas", Person("Kostas"));
+    auto v0 = immer::map<std::string, Person>().set("kostas", Person("Kostas"));
 
-    ASSERT_EQ(v1["kostas"],Person("Kostas"));
+    ASSERT_EQ(v0["kostas"],Person("Kostas"));
 }
 
 TEST(MAP_OF_PERSON_KEY, Positive) {
     auto v0 = immer::map<Person, int>();
-    auto v1 = v0.set(Person("Kostas"),5).set(Person("nick"),6);
+    auto v1 = v0.set(Person("kostas"),5).set(Person("nick"),6);
 
-    ASSERT_EQ(v1[Person("Kostas")],5);
+    ASSERT_EQ(v1[Person("kostas")],5);
+    ASSERT_EQ(v1[Person("nick")],6);
 }
 
 int main(int argc, char **argv) {
