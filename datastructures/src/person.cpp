@@ -1,7 +1,7 @@
 #include "person.hpp"
 
-using std::string;
 using std::hash;
+using std::string;
 
 namespace model
 {
@@ -25,3 +25,8 @@ bool operator==(Person lhs, Person rhs)
     return lhs.name() == rhs.name();
 }
 } // namespace model
+
+std::size_t std::hash<model::Person>::operator()(model::Person p) const
+{
+    return std::hash<std::string>()(p.name());
+}
