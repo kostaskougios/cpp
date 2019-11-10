@@ -2,12 +2,14 @@
 #include "person.hpp"
 #include <immer/map.hpp>
 
-TEST(PERSON_NAME_TEST, PositiveNos) {
+using namespace model;
+
+TEST(PERSON_NAME_TEST, Positive) {
     Person p("Kostas");
     ASSERT_EQ(p.name(),"Kostas");
 }
 
-TEST(map_of_person, Positive) {
+TEST(MAP_OF_PERSON_VALUE, Positive) {
     auto v0 = immer::map<std::string, Person>();
     auto v1 = v0.set("kostas", Person("Kostas"));
 

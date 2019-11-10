@@ -2,20 +2,23 @@
 
 #include <string>
 
-using namespace std;
+namespace model
+{
 
 class Person
 {
 private:
-    string m_name = "";
+    std::string m_name = "";
 
 public:
     Person() : Person("anonymous"){};
-    Person(string);
+    Person(std::string);
 
-    string &name();
+    std::string &name();
 
-    string toString();
+    std::string toString();
 };
 
 bool operator==(Person, Person);
+
+} // namespace model
