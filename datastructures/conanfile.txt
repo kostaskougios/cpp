@@ -1,5 +1,6 @@
 [requires]
 gtest/1.10.0
+qt/5.13.2@bincrafters/stable
 
 [generators]
 cmake
