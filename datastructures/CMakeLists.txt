@@ -12,4 +12,4 @@ include_directories(include)
 add_library(src src/person.cpp)
 add_executable(tests tests/tests.cpp)
 
-target_link_libraries(tests ${CONAN_LIBS} src)
+target_link_libraries(tests qt ${CONAN_LIBS} src)
