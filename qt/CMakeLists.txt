@@ -14,7 +14,7 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-include_directories(include build/speech_autogen/include)
+include_directories(include build)
 
 set(SPEECH src/mainwindow.cpp src/main.cpp)
 qt5_wrap_ui(SPEECH ui/mainwindow.ui)
