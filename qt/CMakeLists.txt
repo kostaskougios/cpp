@@ -21,7 +21,7 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt5 COMPONENTS TextToSpeech REQUIRED)
 
 # build
-include_directories(include build)
+#include_directories(include build)
 
 set(SPEECH src/mainwindow.cpp src/main.cpp)
 add_executable(speech ${SPEECH})
