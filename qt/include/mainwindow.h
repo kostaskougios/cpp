@@ -1,9 +1,7 @@
 #pragma once
 
 #include <QtWidgets/qmainwindow.h>
-
 #include "ui_mainwindow.h"
-
 #include <QTextToSpeech>
 
 class MainWindow : public QMainWindow
