@@ -1,5 +1,9 @@
-# for qt speech
-sudo apt-get install libspeechd-dev
+# for qt + speech
+
+apt search qtspeech
+
+sudo apt-get build-dep qt5-default
+sudo apt-get install libspeechd-dev qtbase5-dev qtdeclarative5-dev libqt5texttospeech5-dev qtspeech5-flite-plugin
 
 # qt repo
 conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
