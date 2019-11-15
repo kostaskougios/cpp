@@ -1,3 +1,7 @@
+# for qt speech
+sudo apt-get install libspeechd-dev
+
+# qt repo
 conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
 
 echo "DONE"
