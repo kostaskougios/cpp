@@ -70,9 +70,31 @@
             "options": {
                 "cwd": "datastructures/build"
             },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "functions: cmake",
+            "type": "shell",
+            "command": "cmake --build .",
+            "options": {
+                "cwd": "functions/build"
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "functions: clean build",
+            "type": "shell",
+            "command": "bin/clean && bin/build",
+            "options": {
+                "cwd": "functions"
             },
             "problemMatcher": [
                 "$gcc"
