@@ -6,7 +6,13 @@
 template <typename Collection, typename Unop>
 Collection map(Collection col, Unop op)
 {
-    return immer::copy(col.begin(), col.end(), op);
+    auto n = Collection{};
+
+    for (auto p = col.begin(); p < col.end(); p++)
+    {
+        n = n.push_back(op(*p));
+    }
+    return n;
 }
 
 TEST(Function_Declaration, Positive)
