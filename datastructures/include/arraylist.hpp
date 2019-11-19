@@ -17,7 +17,10 @@ public:
         p = a;
     };
 
-    E &values();
+    E &values()
+    {
+        return p;
+    };
 
     // ArrayList(std::initializer_list<T> values);
 };
