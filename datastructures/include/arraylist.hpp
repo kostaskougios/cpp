@@ -15,10 +15,20 @@ private:
 public:
     ArrayList(E a[], std::size_t sz) : p(a), m_sz(sz){};
 
+    E *begin()
+    {
+        return p;
+    };
+
+    E *end()
+    {
+        return p + m_sz;
+    }
+
     void forEach(std::function<void(E &)> f)
     {
         E *it = p;
-        for (std::size_t i = 0; i < m_sz; i++)
+        for (E *it = begin(); it < end();)
         {
             f(*it);
             it++;
