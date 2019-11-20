@@ -36,7 +36,5 @@ public:
 
         return v;
     };
-
-    // ArrayList(std::initializer_list<T> values);
 };
 } // namespace fc
