@@ -1,14 +1,14 @@
 #include <gtest/gtest.h>
 #include "arraylist.hpp"
-
-using namespace std;
+#include <vector>
+#include <array>
 
 TEST(ARRAYLIST_DEFAULT_CONSTRUCTOR, Positive)
 {
-    string data[] = {"Kostas", "Kougios"};
-    fc::ArrayList<string> a(data, 2);
+    std::string data[] = {"Kostas", "Kougios"};
+    fc::ArrayList<std::string> a(data, 2);
 
-    string &values = a.values();
+    auto v = a.values();
 }
 
 int main(int argc, char **argv)

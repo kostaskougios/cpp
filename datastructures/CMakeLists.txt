@@ -14,6 +14,5 @@ add_executable(tests tests/tests.cpp)
 target_link_libraries(tests ${CONAN_LIBS} src)
 
 
-add_library(fc src/arraylist.cpp)
 add_executable(arraylist-tests tests/arraylist-tests.cpp)
-target_link_libraries(arraylist-tests ${CONAN_LIBS} fc)
+target_link_libraries(arraylist-tests ${CONAN_LIBS})

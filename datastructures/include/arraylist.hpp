@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+#include <vector>
 
 namespace fc
 {
@@ -17,9 +18,11 @@ public:
         p = a;
     };
 
-    E &values()
+    std::vector<E> values()
     {
-        return p;
+        std::vector<E> v{};
+        auto it = p;
+        return v;
     };
 
     // ArrayList(std::initializer_list<T> values);
