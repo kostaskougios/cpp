@@ -3,7 +3,7 @@
 #include <vector>
 #include <array>
 
-TEST(ArrayList_toStdVector, Positive)
+TEST(ArrayList, toStdVector)
 {
     std::string data[] = {"Kostas", "Kougios"};
     fc::ArrayList<std::string> a(data, 2);
