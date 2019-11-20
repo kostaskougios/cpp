@@ -10,13 +10,10 @@ class ArrayList
 {
 private:
     const std::size_t m_sz;
-    E *p;
+    E *const p;
 
 public:
-    ArrayList(E a[], std::size_t sz) : m_sz(sz)
-    {
-        p = a;
-    };
+    ArrayList(E a[], std::size_t sz) : p(a), m_sz(sz){};
 
     void forEach(std::function<void(E &)> f)
     {
