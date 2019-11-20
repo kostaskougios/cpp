@@ -13,6 +13,17 @@ TEST(ArrayList, toStdVector)
     ASSERT_EQ(actual, expected);
 }
 
+TEST(ArrayList, toStdVectorTwice)
+{
+    std::string data[] = {"Kostas", "Kougios"};
+    fc::ArrayList<std::string> a(data, 2);
+
+    auto expected = std::vector<std::string>{"Kostas", "Kougios"};
+
+    ASSERT_EQ(a.toStdVector(), expected);
+    ASSERT_EQ(a.toStdVector(), expected);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);

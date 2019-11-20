@@ -10,7 +10,7 @@ class ArrayList
 {
 private:
     const std::size_t m_sz;
-    const E *p;
+    E *p;
 
 public:
     ArrayList(E a[], std::size_t sz) : m_sz(sz)
@@ -18,15 +18,22 @@ public:
         p = a;
     };
 
+    void forEach(std::function<void(E &)> f)
+    {
+        E *it = p;
+        for (std::size_t i = 0; i < m_sz; i++)
+        {
+            f(*it);
+            it++;
+        }
+    };
+
     std::vector<E> toStdVector()
     {
         std::vector<E> v{};
-        auto it = p;
-        for (std::size_t i = 0; i < m_sz; i++)
-        {
-            v.push_back(*it);
-            it++;
-        }
+        auto f = [&v](E &e) { v.push_back(e); };
+        forEach(f);
+
         return v;
     };
 
