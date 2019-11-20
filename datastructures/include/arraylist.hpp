@@ -18,10 +18,15 @@ public:
         p = a;
     };
 
-    std::vector<E> values()
+    std::vector<E> toStdVector()
     {
         std::vector<E> v{};
         auto it = p;
+        for (std::size_t i = 0; i < m_sz; i++)
+        {
+            v.push_back(*it);
+            it++;
+        }
         return v;
     };
 

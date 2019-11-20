@@ -3,12 +3,14 @@
 #include <vector>
 #include <array>
 
-TEST(ARRAYLIST_DEFAULT_CONSTRUCTOR, Positive)
+TEST(ArrayList_toStdVector, Positive)
 {
     std::string data[] = {"Kostas", "Kougios"};
     fc::ArrayList<std::string> a(data, 2);
 
-    auto v = a.values();
+    auto actual = a.toStdVector();
+    auto expected = std::vector<std::string>{"Kostas", "Kougios"};
+    ASSERT_EQ(actual, expected);
 }
 
 int main(int argc, char **argv)
