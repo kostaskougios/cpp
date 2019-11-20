@@ -27,11 +27,8 @@ public:
 
     void forEach(std::function<void(E &)> f)
     {
-        E *it = p;
-        for (E *it = begin(); it < end();)
+        for (E *it = begin(); it < end(); f(*it++))
         {
-            f(*it);
-            it++;
         }
     };
 
