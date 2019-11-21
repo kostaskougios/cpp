@@ -15,6 +15,15 @@ public:
         {
         }
     };
+
+    std::vector<E> toStdVector()
+    {
+        std::vector<E> v{};
+        auto f = [&v](E &e) { v.push_back(e); };
+        this->forEach(f);
+
+        return v;
+    };
 };
 
 } // namespace fc
