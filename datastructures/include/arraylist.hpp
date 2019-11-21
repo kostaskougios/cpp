@@ -2,11 +2,12 @@
 
 #include <cstddef>
 #include <vector>
+#include "traversable.hpp"
 
 namespace fc
 {
 template <typename E>
-class ArrayList
+class ArrayList : public Traversable<E>
 {
 private:
     const std::size_t m_sz;
@@ -25,18 +26,11 @@ public:
         return p + m_sz;
     }
 
-    void forEach(std::function<void(E &)> f)
-    {
-        for (E *it = begin(); it < end(); f(*it++))
-        {
-        }
-    };
-
     std::vector<E> toStdVector()
     {
         std::vector<E> v{};
         auto f = [&v](E &e) { v.push_back(e); };
-        forEach(f);
+        this->forEach(f);
 
         return v;
     };
