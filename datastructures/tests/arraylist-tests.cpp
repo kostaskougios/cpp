@@ -29,8 +29,11 @@ TEST(ArrayList, map)
     std::string data[] = {"1", "2"};
     fc::ArrayList<std::string> a(data, 2);
 
-    auto f = [](std::string &s) { return std::stoi(s); };
-    auto actual = a.map(f);
+    auto f = [](std::string &s) {
+        int i = std::stoi(s);
+        return i;
+    };
+    auto actual = a.map<int>(f);
     int expected[] = {1, 2};
 
     ASSERT_EQ(actual, expected);
