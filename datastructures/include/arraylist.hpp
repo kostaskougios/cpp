@@ -16,6 +16,8 @@ private:
 public:
     ArrayList(E a[], std::size_t sz) : p(a), m_sz(sz){};
 
+    std::size_t size() { return m_sz; };
+
     E *begin()
     {
         return p;
@@ -36,4 +38,21 @@ public:
         return ArrayList<T>(r, m_sz);
     }
 };
+
+template <typename E>
+bool operator==(ArrayList<E> lhs, ArrayList<E> rhs)
+{
+    if (lhs.size() != rhs.size())
+        return false;
+
+    E *l;
+    E *r;
+    for (l = lhs.begin(), r = rhs.begin(); l < lhs.end(); l++, r++)
+    {
+        if (*l != *r)
+            return false;
+    }
+    return true;
+}
+
 } // namespace fc

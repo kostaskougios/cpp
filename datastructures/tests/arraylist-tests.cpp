@@ -34,7 +34,8 @@ TEST(ArrayList, map)
         return i;
     };
     auto actual = a.map<int>(f);
-    int expected[] = {1, 2};
+    int e[] = {1, 2};
+    fc::ArrayList<int> expected(e, 2);
 
     ASSERT_EQ(actual, expected);
 }
