@@ -8,9 +8,10 @@
             "options": {
                 "cwd": "cpp_makefile_template"
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
         },
         {
             "label": "cpp_makefile_template: make clean",
@@ -19,7 +20,10 @@
             "options": {
                 "cwd": "cpp_makefile_template"
             },
-            "problemMatcher": []
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
         },
         {
             "label": "cpp_makefile_template: make debug",
@@ -28,7 +32,10 @@
             "options": {
                 "cwd": "cpp_makefile_template"
             },
-            "problemMatcher": []
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
         },
         {
             "label": "testing: bin/build",
@@ -48,9 +55,10 @@
             "options": {
                 "cwd": "testing/build"
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
         },
         {
             "label": "testing: clean",
@@ -59,9 +67,10 @@
             "options": {
                 "cwd": "testing"
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
         },
         {
             "label": "datastructures: cmake",
@@ -74,9 +83,10 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
         },
         {
             "label": "datastructures: clean build",
@@ -85,9 +95,10 @@
             "options": {
                 "cwd": "datastructures"
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
         },
         {
             "label": "functions: cmake",
@@ -96,9 +107,10 @@
             "options": {
                 "cwd": "functions/build"
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
         },
         {
             "label": "functions: clean build",
@@ -107,9 +119,10 @@
             "options": {
                 "cwd": "functions"
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
         }
     ]
 }

@@ -24,6 +24,18 @@ TEST(ArrayList, toStdVectorTwice)
     ASSERT_EQ(a.toStdVector(), expected);
 }
 
+TEST(ArrayList, map)
+{
+    std::string data[] = {"1", "2"};
+    fc::ArrayList<std::string> a(data, 2);
+
+    auto f = [](std::string &s) { return std::stoi(s); };
+    auto actual = a.map(f);
+    int expected[] = {1, 2};
+
+    ASSERT_EQ(actual, expected);
+}
+
 int main(int argc, char **argv)
 {
     testing::InitGoogleTest(&argc, argv);
