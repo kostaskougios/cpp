@@ -25,5 +25,14 @@ public:
     {
         return p + m_sz;
     }
+
+template<typename T>
+    ArrayList<T> map(std::function<T &(E &)> f) {
+        T r[m_sz];
+        std::size_t i=0;
+        auto ff=[*i,&r,f](E &e){ r[*i++]=f(e); };
+        forEach(ff)
+        return ArrayList<T>(r,m_sz);
+    }
 };
 } // namespace fc
