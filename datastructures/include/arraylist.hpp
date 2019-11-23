@@ -16,14 +16,14 @@ private:
 public:
     ArrayList(E a[], std::size_t sz) : m_sz(sz), p(a){};
 
-    std::size_t size() { return m_sz; };
+    std::size_t size() const { return m_sz; };
 
-    E *begin()
+    E *begin() const
     {
         return p;
     };
 
-    E *end()
+    E *end() const
     {
         return p + m_sz;
     }
@@ -32,7 +32,7 @@ public:
     ArrayList<T> map(std::function<T(E &)> f)
     {
         T r[m_sz];
-        std::size_t i = 0;
+        unsigned int i = 0;
         auto ff = [&i, &r, f](E &e) {
             r[i++] = f(e);
         };
@@ -42,7 +42,7 @@ public:
 };
 
 template <typename E>
-bool operator==(ArrayList<E> lhs, ArrayList<E> rhs)
+bool operator==(const ArrayList<E> &lhs, const ArrayList<E> &rhs)
 {
     if (lhs.size() != rhs.size())
         return false;

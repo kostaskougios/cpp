@@ -3,6 +3,7 @@
 #include <array>
 #include "traversable.hpp"
 #include "arraylist.hpp"
+#include <iostream>
 
 TEST(ArrayList, toStdVector)
 {
