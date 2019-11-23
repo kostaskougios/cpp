@@ -14,7 +14,7 @@ private:
     E *const p;
 
 public:
-    ArrayList(E a[], std::size_t sz) : p(a), m_sz(sz){};
+    ArrayList(E a[], std::size_t sz) : m_sz(sz), p(a){};
 
     std::size_t size() { return m_sz; };
 
