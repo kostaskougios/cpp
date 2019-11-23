@@ -1,7 +1,8 @@
 #include <gtest/gtest.h>
-#include "arraylist.hpp"
 #include <vector>
 #include <array>
+#include "traversable.hpp"
+#include "arraylist.hpp"
 
 TEST(ArrayList, toStdVector)
 {
