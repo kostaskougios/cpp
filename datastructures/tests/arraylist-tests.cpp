@@ -40,7 +40,6 @@ TEST(ArrayList, map)
     fc::ArrayList<std::string> a({"1", "2"});
 
     auto actual = a.map<int>([](const std::string &s) {
-        std::cout << s << std::endl;
         return std::stoi(s);
     });
     int e[] = {1, 2};

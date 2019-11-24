@@ -14,9 +14,20 @@ private:
     const std::size_t m_sz;
     const E *const p;
 
+    const E *createArray(std::initializer_list<E> const &a)
+    {
+        E *newArray = new E[m_sz];
+        E *it = newArray;
+        for (E e : a)
+        {
+            *it++ = e;
+        }
+        return newArray;
+    }
+
 public:
     ArrayList(E a[], std::size_t sz) : m_sz(sz), p(a){};
-    ArrayList(std::initializer_list<E> const &a) : m_sz(a.size()), p(a.begin()){};
+    ArrayList(std::initializer_list<E> const &a) : m_sz(a.size()), p(createArray(a)){};
 
     std::size_t size() const { return m_sz; };
 
@@ -35,9 +46,6 @@ public:
     template <typename T>
     ArrayList<T> map(std::function<T(const E &)> f)
     {
-
-        this->forEach([](const E &e) { std::cout << e << std::endl; });
-
         T r[m_sz];
         unsigned int i = 0;
         auto ff = [&i, &r, &f](const E &e) {
