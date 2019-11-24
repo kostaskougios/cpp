@@ -26,12 +26,21 @@ TEST(ArrayList, toStdVectorTwice)
     ASSERT_EQ(a.toStdVector(), expected);
 }
 
-TEST(ArrayList, map)
+TEST(ArrayList, initializer_list_init)
 {
     std::string data[] = {"1", "2"};
-    fc::ArrayList<std::string> a(data, 2);
+    fc::ArrayList<std::string> expected(data, 2);
+    fc::ArrayList<std::string> actual({"1", "2"});
 
-    auto actual = a.map<int>([](std::string &s) {
+    ASSERT_EQ(expected, actual);
+}
+
+TEST(ArrayList, map)
+{
+    fc::ArrayList<std::string> a({"1", "2"});
+
+    auto actual = a.map<int>([](const std::string &s) {
+        std::cout << s << std::endl;
         return std::stoi(s);
     });
     int e[] = {1, 2};

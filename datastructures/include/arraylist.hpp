@@ -2,6 +2,7 @@
 
 #include <cstddef>
 #include <vector>
+#include <initializer_list>
 #include "traversable.hpp"
 
 namespace fc
@@ -11,29 +12,35 @@ class ArrayList : public Traversable<E>
 {
 private:
     const std::size_t m_sz;
-    E *const p;
+    const E *const p;
 
 public:
     ArrayList(E a[], std::size_t sz) : m_sz(sz), p(a){};
+    ArrayList(std::initializer_list<E> const &a) : m_sz(a.size()), p(a.begin()){};
 
     std::size_t size() const { return m_sz; };
 
-    E *begin() const
+    const E *begin() const
     {
-        return p;
+        const E *e = p;
+        return e;
     };
 
-    E *end() const
+    const E *end() const
     {
-        return p + m_sz;
+        const E *e = p;
+        return e + m_sz;
     }
 
     template <typename T>
-    ArrayList<T> map(std::function<T(E &)> f)
+    ArrayList<T> map(std::function<T(const E &)> f)
     {
+
+        this->forEach([](const E &e) { std::cout << e << std::endl; });
+
         T r[m_sz];
         unsigned int i = 0;
-        auto ff = [&i, &r, f](E &e) {
+        auto ff = [&i, &r, &f](const E &e) {
             r[i++] = f(e);
         };
         this->forEach(ff);
@@ -47,8 +54,8 @@ bool operator==(const ArrayList<E> &lhs, const ArrayList<E> &rhs)
     if (lhs.size() != rhs.size())
         return false;
 
-    E *l;
-    E *r;
+    const E *l;
+    const E *r;
     for (l = lhs.begin(), r = rhs.begin(); l < lhs.end(); l++, r++)
     {
         if (*l != *r)
