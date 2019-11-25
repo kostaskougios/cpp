@@ -39,10 +39,15 @@ TEST(ArrayList, map)
     auto actual = a.map<int>([](const std::string &s) {
         return std::stoi(s);
     });
-    int e[] = {1, 2};
-    fc::ArrayList<int> expected(e, 2);
 
-    ASSERT_EQ(actual, expected);
+    // make sure original list not modified
+    fc::ArrayList<std::string> expected1{"1", "2"};
+    ASSERT_EQ(a, expected1);
+
+    // check modified list
+    fc::ArrayList<int> expected2{1, 2};
+
+    ASSERT_EQ(actual, expected2);
 }
 
 int main(int argc, char **argv)

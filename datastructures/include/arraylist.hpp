@@ -25,8 +25,18 @@ private:
         return newArray;
     }
 
+    const E *createArray(E a[], const std::size_t sz)
+    {
+        E *newArray = new E[sz];
+        for (std::size_t i = 0; i < sz; i++)
+        {
+            newArray[i] = a[i];
+        }
+        return newArray;
+    }
+
 public:
-    ArrayList(E a[], std::size_t sz) : m_sz(sz), p(a){};
+    ArrayList(E a[], std::size_t sz) : m_sz(sz), p(createArray(a, sz)){};
     ArrayList(std::initializer_list<E> const &a) : m_sz(a.size()), p(createArray(a)){};
 
     std::size_t size() const { return m_sz; };
@@ -67,7 +77,10 @@ bool operator==(const ArrayList<E> &lhs, const ArrayList<E> &rhs)
     for (l = lhs.begin(), r = rhs.begin(); l < lhs.end(); l++, r++)
     {
         if (*l != *r)
+        {
+            // std::cout << *l << "->" << *r << std::endl;
             return false;
+        }
     }
     return true;
 }
