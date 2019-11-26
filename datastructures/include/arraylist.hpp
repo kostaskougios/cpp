@@ -39,6 +39,11 @@ public:
     ArrayList(E a[], std::size_t sz) : m_sz(sz), p(createArray(a, sz)){};
     ArrayList(std::initializer_list<E> const &a) : m_sz(a.size()), p(createArray(a)){};
 
+    ~ArrayList()
+    {
+        delete[] p;
+    };
+
     std::size_t size() const { return m_sz; };
 
     const E *begin() const
