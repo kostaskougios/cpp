@@ -16,7 +16,7 @@ private:
 
     const E *createArray(std::initializer_list<E> const &a)
     {
-        E *newArray = new E[m_sz];
+        E *newArray = new E[a.size()];
         E *it = newArray;
         for (E e : a)
         {
