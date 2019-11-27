@@ -14,30 +14,21 @@ private:
     const std::size_t m_sz;
     const E *const p;
 
-    const E *createArray(std::initializer_list<E> const &a)
-    {
-        E *newArray = new E[a.size()];
-        E *it = newArray;
-        for (E e : a)
-        {
-            *it++ = e;
-        }
-        return newArray;
-    }
-
-    const E *createArray(E a[], const std::size_t sz)
+    template <typename A>
+    const E *createArray(A &a, const std::size_t sz)
     {
         E *newArray = new E[sz];
-        for (std::size_t i = 0; i < sz; i++)
+        int i = 0;
+        for (E v : a)
         {
-            newArray[i] = a[i];
+            newArray[i++] = v;
         }
         return newArray;
     }
 
 public:
-    ArrayList(E a[], std::size_t sz) : m_sz(sz), p(createArray(a, sz)){};
-    ArrayList(std::initializer_list<E> const &a) : m_sz(a.size()), p(createArray(a)){};
+    ArrayList(E a[], std::size_t sz) : m_sz(sz), p(a){};
+    ArrayList(std::initializer_list<E> const &a) : m_sz(a.size()), p(createArray(a, a.size())){};
 
     ~ArrayList()
     {
@@ -61,9 +52,9 @@ public:
     template <typename T>
     ArrayList<T> map(std::function<T(const E &)> f)
     {
-        T r[m_sz];
+        T *r = new T[m_sz];
         unsigned int i = 0;
-        auto ff = [&i, &r, &f](const E &e) {
+        auto ff = [&i, r, &f](const E &e) {
             r[i++] = f(e);
         };
         this->forEach(ff);
