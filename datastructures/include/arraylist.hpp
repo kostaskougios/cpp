@@ -54,11 +54,10 @@ public:
     {
         T *r = new T[m_sz];
         T *c = r;
-        auto ff = [&r, &f](const E &e) {
+        this->forEach([&r, &f](const E &e) {
             *r = f(e);
             r++;
-        };
-        this->forEach(ff);
+        });
         return ArrayList<T>(c, m_sz);
     }
 };
