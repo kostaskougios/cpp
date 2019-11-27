@@ -53,12 +53,13 @@ public:
     ArrayList<T> map(std::function<T(const E &)> f)
     {
         T *r = new T[m_sz];
-        unsigned int i = 0;
-        auto ff = [&i, r, &f](const E &e) {
-            r[i++] = f(e);
+        T *c = r;
+        auto ff = [&r, &f](const E &e) {
+            *r = f(e);
+            r++;
         };
         this->forEach(ff);
-        return ArrayList<T>(r, m_sz);
+        return ArrayList<T>(c, m_sz);
     }
 };
 
