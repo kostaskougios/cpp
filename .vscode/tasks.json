@@ -79,10 +79,6 @@
             "options": {
                 "cwd": "datastructures/build"
             },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "problemMatcher": {
                 "base": "$gcc",
                 "fileLocation": "absolute"
@@ -118,6 +114,34 @@
             "command": "bin/clean && bin/build",
             "options": {
                 "cwd": "functions"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
+        },
+        {
+            "label": "sfml: cmake",
+            "type": "shell",
+            "command": "cmake --build .",
+            "options": {
+                "cwd": "sfml/build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": "absolute"
+            }
+        },
+        {
+            "label": "sfml: clean build",
+            "type": "shell",
+            "command": "bin/build",
+            "options": {
+                "cwd": "sfml"
             },
             "problemMatcher": {
                 "base": "$gcc",
