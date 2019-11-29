@@ -4,6 +4,7 @@
 #include "traversable.hpp"
 #include "arraylist.hpp"
 #include <iostream>
+#include <memory>
 
 TEST(ArrayList, toStdVector)
 {
@@ -48,6 +49,20 @@ TEST(ArrayList, map)
     fc::ArrayList<int> expected2{1, 2};
 
     ASSERT_EQ(actual, expected2);
+}
+
+auto createArray()
+{
+    auto s1 = new std::string("1");
+    auto s2 = new std::string("2");
+    return new fc::ArrayList<std::string *>{s1, s2};
+};
+
+TEST(ArrayList, memory)
+{
+    auto actual = createArray();
+    auto *expected = new fc::ArrayList<std::string *>{new std::string("1"), new std::string("2")};
+    ASSERT_EQ(*actual, *expected);
 }
 
 int main(int argc, char **argv)

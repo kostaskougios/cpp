@@ -74,7 +74,24 @@ bool operator==(const ArrayList<E> &lhs, const ArrayList<E> &rhs)
     {
         if (*l != *r)
         {
-            // std::cout << *l << "->" << *r << std::endl;
+            return false;
+        }
+    }
+    return true;
+}
+
+template <typename E>
+bool operator==(const ArrayList<E *> &lhs, const ArrayList<E *> &rhs)
+{
+    if (lhs.size() != rhs.size())
+        return false;
+
+    const E *const *l;
+    const E *const *r;
+    for (l = lhs.begin(), r = rhs.begin(); l < lhs.end(); l++, r++)
+    {
+        if (**l != **r)
+        {
             return false;
         }
     }
