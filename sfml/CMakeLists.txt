@@ -18,6 +18,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME} ${CONAN_LIBS})
 
 function(add_option option)
     if(${option})
+        message(STATUS "Processing option " ${option})
         target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE "${option}")
     endif()
 endfunction()
