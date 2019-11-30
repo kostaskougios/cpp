@@ -2,8 +2,8 @@
 
 namespace game
 {
-std::vector<Object> &Game::getState()
+std::vector<Object *> &Game::getState()
 {
-    return state;
+    return m_state;
 }
 } // namespace game

@@ -8,12 +8,12 @@ namespace game
 class Game
 {
 private:
-    std::vector<Object> state;
+    std::vector<Object *> m_state;
 
 public:
-    Game(){};
+    Game(std::vector<Object *> state) : m_state(state){};
 
-    std::vector<Object> &getState();
+    std::vector<Object *> &getState();
 };
 
 } // namespace game

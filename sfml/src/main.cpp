@@ -3,17 +3,19 @@
 #include "ball.hpp"
 #include "renderer.hpp"
 
+using namespace game;
+
 int main()
 {
     int Width = 1024;
     int Height = 768;
     int Radius = 20;
     sf::RenderWindow window(sf::VideoMode(Width, Height), "Silly game production");
-
     window.setFramerateLimit(240);
-    sf::CircleShape shape(Radius);
-    shape.setFillColor(sf::Color::Magenta);
-    shape.setScale(1.f, 1.f);
+
+    Renderer renderer();
+    auto b = new Ball(0, 0, Radius);
+    Game game(std::vector<Object *>{b});
 
     int dx = 1;
     int dy = 1;
@@ -26,15 +28,11 @@ int main()
                 window.close();
         }
 
-        window.clear();
-        window.draw(shape);
-        auto position = shape.getPosition();
-        if (position.x < 0 || position.x > Width - Radius)
+        renderer.render(&window, game);
+        if (b->x() < 0 || b->x() > Width - Radius)
             dx = -dx;
-        if (position.y < 0 || position.y > Height - Radius)
+        if (b->y() < 0 || b->y() > Height - Radius)
             dy = -dy;
-        shape.setPosition(position.x + dx, position.y + dy);
-        window.display();
     }
 
     return 0;
