@@ -1,5 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "ball.hpp"
+#include "renderer.hpp"
 
 int main()
 {
