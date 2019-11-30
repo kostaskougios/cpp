@@ -1,7 +1,5 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <chrono>
-#include <thread>
 
 int main()
 {
@@ -9,6 +7,8 @@ int main()
     int Height = 768;
     int Radius = 20;
     sf::RenderWindow window(sf::VideoMode(Width, Height), "Silly game production");
+
+    window.setFramerateLimit(240);
     sf::CircleShape shape(Radius);
     shape.setFillColor(sf::Color::Magenta);
     shape.setScale(1.f, 1.f);
@@ -33,8 +33,6 @@ int main()
             dy = -dy;
         shape.setPosition(position.x + dx, position.y + dy);
         window.display();
-
-        std::this_thread::sleep_for(std::chrono::milliseconds(2));
     }
 
     return 0;
