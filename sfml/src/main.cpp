@@ -13,7 +13,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(Width, Height), "Silly game production");
     window.setFramerateLimit(240);
 
-    Renderer renderer();
+    Renderer renderer;
     auto b = new Ball(0, 0, Radius);
     Game game(std::vector<Object *>{b});
 

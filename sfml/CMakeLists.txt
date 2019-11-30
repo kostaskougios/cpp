@@ -13,5 +13,9 @@ conan_basic_setup()
 
 include_directories(include)
 
-add_executable(${CMAKE_PROJECT_NAME} src/main.cpp src/ball.cpp)
+file(GLOB SRC
+    "src/*.cpp"
+)
+
+add_executable(${CMAKE_PROJECT_NAME} ${SRC})
 target_link_libraries(${CMAKE_PROJECT_NAME} ${CONAN_LIBS})
