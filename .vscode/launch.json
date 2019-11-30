@@ -22,6 +22,25 @@
             ]
         },
         {
+            "name": "sfml",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/sfml/build/bin/sfml",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/sfml",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
             "name": "cpp build and debug active file",
             "type": "cppdbg",
             "request": "launch",

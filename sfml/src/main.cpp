@@ -1,11 +1,20 @@
+#include <iostream>
 #include <SFML/Graphics.hpp>
+#include <chrono>
+#include <thread>
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    int Width = 1024;
+    int Height = 768;
+    int Radius = 20;
+    sf::RenderWindow window(sf::VideoMode(Width, Height), "Silly game production");
+    sf::CircleShape shape(Radius);
+    shape.setFillColor(sf::Color::Magenta);
+    shape.setScale(1.f, 1.f);
 
+    int dx = 1;
+    int dy = 1;
     while (window.isOpen())
     {
         sf::Event event;
@@ -17,7 +26,15 @@ int main()
 
         window.clear();
         window.draw(shape);
+        auto position = shape.getPosition();
+        if (position.x < 0 || position.x > Width - Radius)
+            dx = -dx;
+        if (position.y < 0 || position.y > Height - Radius)
+            dy = -dy;
+        shape.setPosition(position.x + dx, position.y + dy);
         window.display();
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(2));
     }
 
     return 0;
