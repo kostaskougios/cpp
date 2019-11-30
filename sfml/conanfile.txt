@@ -1,6 +1,7 @@
 [requires]
 gtest/1.10.0
 sfml/2.5.1@bincrafters/stable
+range-v3/0.9.1@ericniebler/stable
 
 [generators]
 cmake
