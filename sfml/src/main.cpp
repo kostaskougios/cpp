@@ -14,11 +14,9 @@ int main()
     window.setFramerateLimit(240);
 
     Renderer renderer;
-    auto b = new Ball(0, 0, Radius);
-    Game game(std::vector<Object *>{b});
+    auto b = new Ball(0, 0, Radius, 1, 1);
+    Game game(std::vector<Object *>{b}, Width, Height);
 
-    int dx = 1;
-    int dy = 1;
     while (window.isOpen())
     {
         sf::Event event;
@@ -29,10 +27,6 @@ int main()
         }
 
         renderer.render(&window, game);
-        if (b->x() < 0 || b->x() > Width - Radius)
-            dx = -dx;
-        if (b->y() < 0 || b->y() > Height - Radius)
-            dy = -dy;
     }
 
     return 0;

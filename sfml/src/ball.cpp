@@ -2,9 +2,16 @@
 
 namespace game
 {
-Ball Ball::move(int dx, int dy)
+Object *Ball::nextMove(Game &game)
 {
-    return Ball(m_x + dx, m_x + dy, m_radius);
+    int dx = m_dx;
+    int dy = m_dy;
+    if (m_x < 0 || m_x > game.width())
+        dx = -dx;
+    if (m_y < 0 || m_y > game.height())
+        dy = -dy;
+
+    return new Ball(m_x + dx, m_x + dy, m_radius, dx, dy);
 }
 
 int Ball::x()
