@@ -1,5 +1,5 @@
 #include "renderer.hpp"
-#include <range/v3/all.hpp>
+#include <range/v3/algorithm/for_each.hpp>
 
 namespace game
 {
