@@ -10,7 +10,7 @@ int main()
     int Width = 1024;
     int Height = 768;
     int Radius = 20;
-    sf::RenderWindow window(sf::VideoMode(Width, Height), "Silly game production");
+    sf::RenderWindow window(sf::VideoMode(Width, Height), "Silly game productions");
     window.setFramerateLimit(240);
 
     Renderer renderer;
