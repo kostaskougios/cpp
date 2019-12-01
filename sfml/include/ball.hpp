@@ -17,9 +17,6 @@ private:
 public:
     Ball(int x, int y, int radius, int dx, int dy) : m_x(x), m_y(y), m_radius(radius), m_dx(dx), m_dy(dy){};
 
-    int x();
-    int y();
-
     Object *nextMove(Game &game);
 
     void render(sf::RenderWindow *);

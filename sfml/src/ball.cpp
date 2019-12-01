@@ -6,23 +6,14 @@ Object *Ball::nextMove(Game &game)
 {
     int dx = m_dx;
     int dy = m_dy;
-    if (m_x < 0 || m_x > game.width())
+    if (m_x < 0 || m_x + m_radius > game.width())
         dx = -dx;
-    if (m_y < 0 || m_y > game.height())
+    if (m_y < 0 || m_y + m_radius > game.height())
         dy = -dy;
 
-    auto *b = new Ball(m_x + dx, m_x + dy, m_radius, dx, dy);
+    auto *b = new Ball(m_x + dx, m_y + dy, m_radius, dx, dy);
     return b;
 }
-
-int Ball::x()
-{
-    return m_x;
-};
-int Ball::y()
-{
-    return m_y;
-};
 
 void Ball::render(sf::RenderWindow *window)
 {
