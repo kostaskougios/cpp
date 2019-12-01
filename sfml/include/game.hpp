@@ -20,6 +20,8 @@ public:
 
     std::vector<Object *> &getState();
 
+    Game *nextMove();
+
     int width();
     int height();
 };
