@@ -10,7 +10,9 @@ private:
     void loadFromFile(std::string, sf::Texture &);
 
 public:
-    sf::Texture player1;
+    sf::Texture player1Texture;
+    sf::Sprite player1;
+
     Textures();
 };
 

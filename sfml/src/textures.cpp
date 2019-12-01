@@ -5,7 +5,8 @@ namespace game
 {
 Textures::Textures()
 {
-    loadFromFile("textures/kostas.png", player1);
+    loadFromFile("textures/kostas.png", player1Texture);
+    player1.setTexture(player1Texture);
 }
 
 void Textures::loadFromFile(std::string file, sf::Texture &t)

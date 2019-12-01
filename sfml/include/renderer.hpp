@@ -10,7 +10,7 @@ namespace game
 class Renderer
 {
 private:
-    sf::RenderWindow *w;
+    Textures textures;
 
 public:
     void render(sf::RenderWindow *, Game *);
