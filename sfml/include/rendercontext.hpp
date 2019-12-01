@@ -7,10 +7,10 @@ class Game;
 
 struct RenderContext
 {
-    sf::RenderWindow *window;
+    sf::RenderWindow &window;
     Game &game;
 
-    RenderContext(sf::RenderWindow *w, Game &g) : window(w), game(g){};
+    RenderContext(sf::RenderWindow &w, Game &g) : window(w), game(g){};
 };
 
 } // namespace game

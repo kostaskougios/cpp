@@ -17,10 +17,11 @@ int main()
 
     Renderer renderer;
     auto textures = new Textures();
-    auto *game = new Game(std::vector<Object *>{
-                              new Player(Width / 2, Height / 2),
-                              new Ball(0, 0, Radius, 1, 1)},
-                          Width, Height, textures);
+    auto *game = new Game(
+        std::vector<Object *>{
+            new Player(Width / 2, Height / 2),
+            new Ball(0, 0, Radius, 1, 1)},
+        Width, Height, textures);
 
     while (window.isOpen())
     {

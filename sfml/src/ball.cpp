@@ -21,7 +21,7 @@ void Ball::render(RenderContext &context)
     shape.setFillColor(sf::Color::Magenta);
     shape.setScale(1.f, 1.f);
     shape.setPosition(m_x, m_y);
-    context.window->draw(shape);
+    context.window.draw(shape);
 }
 
 } // namespace game

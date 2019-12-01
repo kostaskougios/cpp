@@ -10,7 +10,7 @@ void Renderer::render(sf::RenderWindow *window, Game *game)
 
     window->clear();
 
-    RenderContext rc(window, *game);
+    RenderContext rc(*window, *game);
     ranges::for_each(state, [&](Object *o) { o->render(rc); });
     window->display();
 }
