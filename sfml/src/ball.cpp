@@ -11,7 +11,8 @@ Object *Ball::nextMove(Game &game)
     if (m_y < 0 || m_y > game.height())
         dy = -dy;
 
-    return new Ball(m_x + dx, m_x + dy, m_radius, dx, dy);
+    auto *b = new Ball(m_x + dx, m_x + dy, m_radius, dx, dy);
+    return b;
 }
 
 int Ball::x()
@@ -28,6 +29,7 @@ void Ball::render(sf::RenderWindow *window)
     sf::CircleShape shape(m_radius);
     shape.setFillColor(sf::Color::Magenta);
     shape.setScale(1.f, 1.f);
+    shape.setPosition(m_x, m_y);
     window->draw(shape);
 }
 

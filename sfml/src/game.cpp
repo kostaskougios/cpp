@@ -20,7 +20,7 @@ int Game::height() { return m_height; };
 
 Game *Game::nextMove()
 {
-    std::vector<Object *> next = m_state | ranges::view::transform([this](Object *o) { return o->nextMove(*this); }) | ranges::to<std::vector<Object *>>();
+    std::vector<Object *> next = m_state | ranges::view::transform([this](Object *o) { return o->nextMove(*this); }) | ranges::to_vector;
     return new Game(next, m_width, m_height);
 }
 
