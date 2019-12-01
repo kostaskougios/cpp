@@ -2,7 +2,7 @@
 
 namespace game
 {
-void Player::render(sf::RenderWindow *window)
+void Player::render(RenderContext &context)
 {
 }
 

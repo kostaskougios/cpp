@@ -15,13 +15,13 @@ Object *Ball::nextMove(Game &game)
     return b;
 }
 
-void Ball::render(sf::RenderWindow *window)
+void Ball::render(RenderContext &context)
 {
     sf::CircleShape shape(m_radius);
     shape.setFillColor(sf::Color::Magenta);
     shape.setScale(1.f, 1.f);
     shape.setPosition(m_x, m_y);
-    window->draw(shape);
+    context.window->draw(shape);
 }
 
 } // namespace game

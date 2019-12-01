@@ -14,7 +14,7 @@ private:
 public:
     Player(int x, int y) : m_x(x), m_y(y){};
 
-    void render(sf::RenderWindow *);
+    void render(RenderContext &context);
     Object *nextMove(Game &);
 };
 
