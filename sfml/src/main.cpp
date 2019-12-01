@@ -9,10 +9,11 @@ using namespace game;
 
 int main()
 {
-    int Width = 1024;
-    int Height = 768;
     int Radius = 20;
-    sf::RenderWindow window(sf::VideoMode(Width, Height), "Silly game productions");
+    auto desktopVideoMode = sf::VideoMode::getFullscreenModes().front();
+    int Width = desktopVideoMode.width;
+    int Height = desktopVideoMode.height;
+    sf::RenderWindow window(desktopVideoMode, "Silly game productions", sf::Style::Fullscreen);
     window.setFramerateLimit(240);
 
     Renderer renderer;
