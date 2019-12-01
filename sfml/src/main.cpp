@@ -3,6 +3,7 @@
 #include "ball.hpp"
 #include "player.hpp"
 #include "renderer.hpp"
+#include "textures.hpp"
 
 using namespace game;
 
@@ -15,10 +16,11 @@ int main()
     window.setFramerateLimit(240);
 
     Renderer renderer;
+    auto textures = new Textures();
     auto *game = new Game(std::vector<Object *>{
                               new Player(Width / 2, Height / 2),
                               new Ball(0, 0, Radius, 1, 1)},
-                          Width, Height);
+                          Width, Height, textures);
 
     while (window.isOpen())
     {
