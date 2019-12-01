@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "ball.hpp"
+#include "player.hpp"
 #include "renderer.hpp"
 
 using namespace game;
@@ -14,8 +15,10 @@ int main()
     window.setFramerateLimit(240);
 
     Renderer renderer;
-    auto b = new Ball(0, 0, Radius, 1, 1);
-    auto *game = new Game(std::vector<Object *>{b}, Width, Height);
+    auto *game = new Game(std::vector<Object *>{
+                              new Player(Width / 2, Height / 2),
+                              new Ball(0, 0, Radius, 1, 1)},
+                          Width, Height);
 
     while (window.isOpen())
     {
