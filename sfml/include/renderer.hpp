@@ -13,7 +13,7 @@ private:
     sf::RenderWindow *w;
 
 public:
-    void render(sf::RenderWindow *, Game &);
+    void render(sf::RenderWindow *, Game *);
 };
 
 } // namespace game

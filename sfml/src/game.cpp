@@ -1,9 +1,15 @@
 #include "game.hpp"
 #include "object.hpp"
 #include <range/v3/view/transform.hpp>
+#include <range/v3/algorithm/for_each.hpp>
 
 namespace game
 {
+Game::~Game()
+{
+    ranges::for_each(m_state, [](Object *o) { delete o; });
+}
+
 std::vector<Object *> &Game::getState()
 {
     return m_state;

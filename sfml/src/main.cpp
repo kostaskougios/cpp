@@ -15,7 +15,7 @@ int main()
 
     Renderer renderer;
     auto b = new Ball(0, 0, Radius, 1, 1);
-    Game game(std::vector<Object *>{b}, Width, Height);
+    auto *game = new Game(std::vector<Object *>{b}, Width, Height);
 
     while (window.isOpen())
     {
@@ -27,6 +27,9 @@ int main()
         }
 
         renderer.render(&window, game);
+        auto *g = game->nextMove();
+        delete game;
+        game = g;
     }
 
     return 0;

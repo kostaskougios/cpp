@@ -17,6 +17,7 @@ private:
 
 public:
     Game(std::vector<Object *> state, int width, int height) : m_width(width), m_height(height), m_state(state){};
+    ~Game();
 
     std::vector<Object *> &getState();
 
