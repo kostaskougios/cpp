@@ -16,7 +16,9 @@ namespace game {
 		int newX = m_x + x;
 		int newY = m_y + y;
 		if (newX < 0) newX = 0;
-		if (newX > game.width()) newX = game.width();
+		if (newX > game.width() - 50) newX = game.width() - 50;
+		if (newY < 0) newY = 0;
+		if (newY > game.height() - 50) newY = game.height() - 50;
 
 		return new Player(newX, newY);
 	}
