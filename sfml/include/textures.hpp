@@ -2,18 +2,16 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace game
-{
-class Textures
-{
-private:
-    void loadFromFile(std::string, sf::Texture &);
+namespace game {
+	class Textures {
+	private:
+		void loadFromFile(std::string, sf::Texture &);
 
-public:
-    sf::Texture player1Texture;
-    sf::Sprite player1;
+	public:
+		sf::Texture player1Texture;
+		sf::Sprite player1;
 
-    Textures();
-};
+		Textures();
+	};
 
 } // namespace game

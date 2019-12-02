@@ -4,16 +4,14 @@
 #include <SFML/Graphics.hpp>
 #include "game.hpp"
 
-namespace game
-{
+namespace game {
 
-class Renderer
-{
-private:
-    Textures textures;
+	class Renderer {
+	private:
+		Textures textures;
 
-public:
-    void render(sf::RenderWindow *, Game *);
-};
+	public:
+		void render(sf::RenderWindow *, Game *);
+	};
 
 } // namespace game
