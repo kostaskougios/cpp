@@ -1,8 +1,8 @@
 #!/bin/bash
 
-rm -rf build
-mkdir build
-pushd build
+rm -rf cmake-build-debug
+mkdir cmake-build-debug
+pushd cmake-build-debug
 
 conan install .. --build=missing
 cmake .. -DCMAKE_BUILD_TYPE=Debug

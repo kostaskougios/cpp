@@ -1,17 +1,24 @@
+#include <iostream>
 #include "player.hpp"
 
-namespace game
-{
-void Player::render(RenderContext &context)
-{
-    sf::Sprite &sprite = context.textures.player1;
-    sprite.setPosition(sf::Vector2f(100, 100));
-    context.window.draw(sprite);
-}
+namespace game {
+	void Player::render(RenderContext &context) {
+		sf::Sprite &sprite = context.textures.player1;
+		sprite.setPosition(sf::Vector2f(m_x, m_y));
+		context.window.draw(sprite);
+	}
 
-Object *Player::nextMove(Game &)
-{
-    return new Player(m_x, m_y);
-}
+	Object *Player::nextMove(Game &game) {
+		sf::Joystick::update();
+		float x = sf::Joystick::getAxisPosition(0, sf::Joystick::X) / 10;
+		float y = sf::Joystick::getAxisPosition(0, sf::Joystick::Y) / 10;
+
+		int newX = m_x + x;
+		int newY = m_y + y;
+		if (newX < 0) newX = 0;
+		if (newX > game.width()) newX = game.width();
+
+		return new Player(newX, newY);
+	}
 
 } // namespace game
