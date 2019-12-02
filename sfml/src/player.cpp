@@ -5,6 +5,7 @@ namespace game {
 	void Player::render(RenderContext &context) {
 		sf::Sprite &sprite = context.textures.player1;
 		sprite.setPosition(sf::Vector2f(m_x, m_y));
+		sprite.setScale(sf::Vector2f(m_scale, m_scale));
 		context.window.draw(sprite);
 	}
 
@@ -20,7 +21,11 @@ namespace game {
 		if (newY < 0) newY = 0;
 		if (newY > game.height() - 50) newY = game.height() - 50;
 
-		return new Player(newX, newY);
+		float dScale = m_dScale;
+		float scale = m_scale + dScale;
+		if (scale > 1.2 || scale < 0.8) dScale = -dScale;
+
+		return new Player(newX, newY, scale, dScale);
 	}
 
 } // namespace game
